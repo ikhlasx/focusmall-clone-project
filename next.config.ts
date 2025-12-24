@@ -16,7 +16,8 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  outputFileTracingRoot: path.resolve(__dirname, '../../'),
+  // Only set outputFileTracingRoot if not on Vercel (for monorepo support)
+  ...(process.env.VERCEL ? {} : { outputFileTracingRoot: path.resolve(__dirname, '../../') }),
   typescript: {
     ignoreBuildErrors: true,
   },
