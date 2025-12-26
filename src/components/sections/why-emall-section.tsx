@@ -20,28 +20,28 @@ const WhyEmallSection = () => {
       title: "High-Footfall Commercial Hub",
       summary: "Strategically designed spaces that attract daily shoppers, diners, and professionals.",
       url: "#explore",
-      image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/fa64259f-66bd-430d-84b6-0aa1ec4f01ad-focusmall-in/assets/images/1-4.webp"
+      image: "/commercial.jpg"
     },
     {
       id: "curated-mix",
       title: "Curated Food & Retail Mix",
       summary: "From food courts to lifestyle brands — every floor is purpose-planned.",
       url: "#explore",
-      image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/fa64259f-66bd-430d-84b6-0aa1ec4f01ad-focusmall-in/assets/images/31-2.webp"
+      image: "/food court.jpg"
     },
     {
       id: "flexible-spaces",
       title: "Flexible Business Spaces",
       summary: "Offices, co-working, and service zones designed for modern businesses.",
       url: "#explore",
-      image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/fa64259f-66bd-430d-84b6-0aa1ec4f01ad-focusmall-in/assets/images/74-3.webp"
+      image: "/spaces.jpg"
     },
     {
       id: "convenience",
       title: "Convenience & Infrastructure",
       summary: "Parking, power backup, accessibility, and maintenance support.",
       url: "#explore",
-      image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/fa64259f-66bd-430d-84b6-0aa1ec4f01ad-focusmall-in/assets/images/4-19.webp"
+      image: "/parking.jpg"
     },
   ];
 
