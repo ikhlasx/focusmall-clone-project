@@ -55,21 +55,23 @@ const accordionItems = [
 
 const ServicesAccordion = () => {
   return (
-    <section className="bg-white py-[100px]">
+    <section className="bg-white py-20 lg:py-28">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-24">
           <div className="mb-12 flex flex-col justify-center md:mb-0">
-            <h2 className="text-[40px] font-bold text-dark-navy leading-[1.2] mb-[30px]">
-              Mall Services & Facilities
+            <h2 className="text-3xl md:text-4xl lg:text-[48px] font-bold text-dark-navy leading-tight mb-6">
+              Facilities & Trust
             </h2>
-            <p className="text-medium-gray text-base leading-[1.7] mb-6">
+            <p className="text-medium-gray text-lg leading-relaxed mb-8">
               Emall provides comprehensive facilities and services to ensure a seamless experience for tenants and visitors.
             </p>
             <a
-              href="/rooms"
-              className="bg-primary text-primary-foreground text-base font-semibold py-3 px-[25px] rounded-[5px] self-start inline-block w-auto hover:bg-primary/90 transition-colors"
+              href="https://maps.app.goo.gl/Snao92thQXErENgh8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-primary text-primary-foreground text-base font-semibold py-4 px-8 rounded-lg self-start inline-block w-auto hover:bg-primary/90 transition-colors hover:shadow-lg"
             >
-              View Available Spaces
+              Plan Your Visit
             </a>
           </div>
           <div>

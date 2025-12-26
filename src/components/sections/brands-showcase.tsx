@@ -30,28 +30,23 @@ const brandLogos = [
 
 const BrandsShowcase = () => {
   return (
-    <section className="bg-[#1a1a1a] relative">
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-20"
-        // Since no specific background image is provided in the assets,
-        // this is a conceptual placeholder. The dark section background provides the primary visual.
-      ></div>
-      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24 text-center">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl lg:text-[42px] font-semibold text-white leading-tight">
-            Explore an unparalleled selection of the world's leading brands at Focus
+    <section className="bg-white py-20 lg:py-28 relative">
+      <div className="relative container mx-auto px-6 lg:px-8 text-center">
+        <div className="max-w-4xl mx-auto mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-[48px] font-bold text-dark-navy leading-tight mb-6">
+            Explore leading brands at Emall
           </h2>
-          <p className="mt-4 text-base md:text-lg text-white/70 max-w-2xl mx-auto">
+          <p className="text-lg text-medium-gray max-w-2xl mx-auto leading-relaxed">
             From fashion to electronics, beauty to home decor, find everything you need in one place.
           </p>
         </div>
 
-        <div className="mt-12 lg:mt-16 max-w-6xl mx-auto bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 lg:p-8">
-          <div className="flex items-center justify-start md:justify-center overflow-x-auto gap-6 lg:gap-8 hide-scrollbar">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex items-center justify-start md:justify-center overflow-x-auto gap-6 lg:gap-8 hide-scrollbar pb-4">
             {brandLogos.map((brand, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 bg-white rounded-xl w-44 h-24 flex items-center justify-center p-4 transition-transform duration-300 ease-in-out hover:scale-105"
+                className="flex-shrink-0 bg-white border border-gray-200 rounded-xl w-44 h-24 flex items-center justify-center p-4 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:border-primary/30"
               >
                 <Image
                   src={brand.src}

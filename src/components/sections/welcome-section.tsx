@@ -83,8 +83,8 @@ const WelcomeSection = () => {
               className="w-full h-full object-cover"
             />
             <div ref={counterBoxRef} className="absolute bottom-5 left-5 bg-primary p-4 rounded-lg text-center w-auto">
-                <p className="text-white text-5xl font-bold leading-none">+{count}</p>
-                <p className="text-white text-base font-medium mt-1">Commercial Spaces</p>
+                <p className="text-black text-5xl font-bold leading-none">+{count}</p>
+                <p className="text-black text-base font-medium mt-1">Commercial Spaces</p>
             </div>
           </div>
 

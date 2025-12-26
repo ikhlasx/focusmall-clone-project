@@ -63,7 +63,7 @@ const RoomFilters = ({ onFilterChange }: RoomFiltersProps) => {
             <Filter className="w-5 h-5 mr-2 text-primary" />
             <span className="font-semibold text-dark-navy">Filters</span>
             {hasActiveFilters && (
-              <span className="ml-2 bg-primary text-white text-xs px-2 py-1 rounded-full">
+              <span className="ml-2 bg-primary text-black text-xs px-2 py-1 rounded-full">
                 Active
               </span>
             )}

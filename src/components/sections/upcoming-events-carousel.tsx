@@ -63,11 +63,16 @@ const UpcomingEventsCarousel = () => {
     <section className="bg-background py-20 lg:py-24">
       <div className="container">
         <div className="flex flex-col md:flex-row justify-between md:items-center mb-12 gap-4">
-          <h2 className="text-3xl md:text-4xl lg:text-[42px] font-semibold text-dark-navy" style={{ lineHeight: 1.3, letterSpacing: '-0.3px' }}>
-            Upcoming Events
-          </h2>
+          <div>
+            <h2 className="text-3xl md:text-4xl lg:text-[42px] font-semibold text-dark-navy mb-3" style={{ lineHeight: 1.3, letterSpacing: '-0.3px' }}>
+              Upcoming Events
+            </h2>
+            <p className="text-medium-gray max-w-2xl">
+              From fashion showcases to live performances and workshops, Emall hosts experiences that bring people together.
+            </p>
+          </div>
           <a
-            href="#"
+            href="/events"
             className="bg-primary hover:opacity-90 text-primary-foreground font-semibold py-[11px] px-[18px] rounded-[5px] transition-colors text-[15px] text-center whitespace-nowrap leading-none tracking-[0.5px]"
           >
             View All Events

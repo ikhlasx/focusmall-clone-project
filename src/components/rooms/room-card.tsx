@@ -89,7 +89,7 @@ const RoomCard = ({ room, onClick }: RoomCardProps) => {
 
         {isVacant && (
           <div className="mt-4 pt-4 border-t border-gray-200">
-            <button className="w-full bg-primary text-white py-2 px-4 rounded-md text-sm font-semibold hover:bg-primary/90 transition-colors">
+            <button className="w-full bg-primary text-black py-2 px-4 rounded-md text-sm font-semibold hover:bg-primary/90 transition-colors">
               View Details
             </button>
           </div>

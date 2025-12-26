@@ -1,104 +1,150 @@
 "use client";
 
-import { Sparkles, ShoppingBag, Utensils, Gamepad2, Briefcase, Eye, Smartphone, Monitor } from "lucide-react";
+import Link from "next/link";
+import { Sparkles, ArrowRight } from "lucide-react";
+import { useState } from "react";
 
 const UpcomingAtEmall = () => {
-  const upcomingItems = [
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const accordionItems = [
     {
-      icon: Utensils,
-      title: "Burger & Fried Chicken Brands",
-      description: "Premium fast-food concepts coming soon"
+      id: 1,
+      title: "Fast-Food & Fried Chicken",
+      imageUrl: "/food.jpg",
     },
     {
-      icon: Utensils,
-      title: "Tea & Snack Concepts",
-      description: "Variety of snacks with tea options"
+      id: 2,
+      title: "Food Court & Dining",
+      imageUrl: "/food court.jpg",
     },
     {
-      icon: Eye,
-      title: "Optical Store",
-      description: "Eyewear and vision care services"
+      id: 3,
+      title: "Supermarket & Retail",
+      imageUrl: "/supermarket.jpg",
     },
     {
-      icon: Smartphone,
-      title: "Mobile & Computer Shop",
-      description: "Latest gadgets and tech solutions"
+      id: 4,
+      title: "Shopping & Fashion",
+      imageUrl: "/retail 1.jpg",
     },
     {
-      icon: ShoppingBag,
-      title: "Ladies Footwear & Fancy Centre",
-      description: "Fashion-forward footwear and accessories"
+      id: 5,
+      title: "Premium Retail Spaces",
+      imageUrl: "/retail 3.jpg",
     },
     {
-      icon: Gamepad2,
-      title: "Gaming & Entertainment Zone",
-      description: "Computer game centre and fun activities"
+      id: 6,
+      title: "Entertainment & Lifestyle",
+      imageUrl: "/retail 5.jpg",
     },
     {
-      icon: Briefcase,
-      title: "Co-working & Startup Offices",
-      description: "Flexible workspace for entrepreneurs"
+      id: 7,
+      title: "Rooftop Experiences",
+      imageUrl: "/roof.jpg",
     },
   ];
 
+  const handleItemHover = (index: number) => {
+    setActiveIndex(index);
+  };
+
   return (
-    <section className="py-20 bg-white" id="upcoming">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-12" data-aos="fade-up">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <Sparkles className="w-8 h-8 text-primary" />
-            <h2 className="text-3xl md:text-4xl font-bold text-dark-navy">
-              What's Coming Soon at Emall
-            </h2>
-          </div>
-          <p className="text-lg text-medium-gray max-w-2xl mx-auto">
-            Discover exciting new brands and services launching at Emall. Join us in building a vibrant commercial community.
-          </p>
-        </div>
+    <section className="py-20 lg:py-28 bg-white" id="upcoming">
+      <div className="container mx-auto px-6 lg:px-8">
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {upcomingItems.map((item, index) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={index}
-                className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-lg p-6 border border-primary/20 hover:border-primary/40 transition-all duration-300 group"
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+          {/* Left Side: Text Content */}
+          <div className="w-full md:w-1/2 text-center md:text-left">
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight tracking-tighter mb-6">
+              Discover What's Coming
+            </h3>
+            <p className="text-lg text-gray-600 max-w-xl mx-auto md:mx-0 mb-8">
+              From fast-food favorites to premium retail experiences, Emall is bringing together the best brands and experiences under one roof.
+            </p>
+            <div className="mt-8">
+              <Link
+                href="/rooms"
+                className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-black font-semibold px-8 py-3 rounded-lg shadow-lg transition-colors duration-300"
               >
-                <div className="flex items-start gap-4">
-                  <div className="bg-primary/20 p-3 rounded-lg group-hover:bg-primary/30 transition-colors">
-                    <Icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-dark-navy mb-2">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-medium-gray">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+                Explore Business Opportunities
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
+          </div>
 
-        <div className="mt-12 text-center">
-          <p className="text-medium-gray mb-4">
-            Interested in opening your business at Emall?
-          </p>
-          <a
-            href="/rooms"
-            className="inline-block text-primary font-semibold text-lg hover:text-dark-navy transition-colors duration-300"
-          >
-            <span className="border-b-2 border-primary pb-1">View Available Spaces</span>
-          </a>
+          {/* Right Side: Image Accordion */}
+          <div className="w-full md:w-1/2">
+            <div className="flex flex-row items-center justify-center gap-4 overflow-x-auto p-4">
+              {accordionItems.map((item, index) => (
+                <AccordionItem
+                  key={item.id}
+                  item={item}
+                  isActive={index === activeIndex}
+                  onMouseEnter={() => handleItemHover(index)}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
   );
 };
 
-export default UpcomingAtEmall;
+// Accordion Item Component
+const AccordionItem = ({ 
+  item, 
+  isActive, 
+  onMouseEnter 
+}: { 
+  item: { id: number; title: string; imageUrl: string }; 
+  isActive: boolean; 
+  onMouseEnter: () => void;
+}) => {
+  return (
+    <div
+      className={`
+        relative h-[450px] rounded-2xl overflow-hidden cursor-pointer
+        transition-all duration-700 ease-in-out
+        ${isActive ? 'w-[400px]' : 'w-[60px]'}
+      `}
+      onMouseEnter={onMouseEnter}
+    >
+      {/* Background Image */}
+      <img
+        src={item.imageUrl}
+        alt={item.title}
+        className={`absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-300 ${
+          isActive ? 'opacity-100' : 'opacity-80'
+        }`}
+        onError={(e) => { 
+          const target = e.target as HTMLImageElement;
+          target.onerror = null; 
+          target.src = 'https://placehold.co/400x450/2d3748/ffffff?text=Image+Error'; 
+        }}
+      />
+      {/* Very subtle gradient overlay only at bottom for text readability */}
+      {isActive && (
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/30 to-transparent z-[1] pointer-events-none"></div>
+      )}
 
+      {/* Caption Text */}
+      <span
+        className={`
+          absolute text-white text-lg font-semibold whitespace-nowrap z-[2]
+          transition-all duration-300 ease-in-out
+          ${
+            isActive
+              ? 'bottom-6 left-1/2 -translate-x-1/2 rotate-0'
+              : 'w-auto text-left bottom-24 left-1/2 -translate-x-1/2 rotate-90'
+          }
+        `}
+      >
+        {item.title}
+      </span>
+    </div>
+  );
+};
+
+export default UpcomingAtEmall;

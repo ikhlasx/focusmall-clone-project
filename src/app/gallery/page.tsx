@@ -3,11 +3,14 @@
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { X } from "lucide-react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 type GalleryCategory = "All" | "Exterior" | "Dining" | "Fitness" | "Shopping" | "Facilities" | "Meetings" | "Media";
 
@@ -100,11 +103,14 @@ export default function GalleryPage() {
       <Header />
       <main className="flex-1 pt-[88px]">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-primary to-primary/80 text-white py-16">
+        <section className="bg-gradient-to-br from-primary via-primary to-primary/90 text-white py-20">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto text-center" data-aos="fade-up">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">📸 Emall Gallery</h1>
-              <p className="text-lg md:text-xl text-white/90">
+              <Badge variant="secondary" className="mb-6 bg-white/20 text-white border-white/30">
+                📸 Visual Showcase
+              </Badge>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Emall Gallery</h1>
+              <p className="text-lg md:text-xl text-white/90 font-medium">
                 A Visual Glimpse of Emall Spaces & Milestones
               </p>
             </div>
@@ -112,23 +118,21 @@ export default function GalleryPage() {
         </section>
 
         {/* Category Filters */}
-        <section className="py-8 bg-white border-b border-gray-200 sticky top-[88px] z-40">
+        <section className="py-6 bg-white border-b border-gray-200 sticky top-[88px] z-40">
           <div className="container mx-auto px-6">
-            <div className="flex flex-wrap items-center justify-center gap-3">
+            <div className="flex flex-wrap items-center justify-center gap-2">
               {categories.map((category) => (
-                <button
+                <Button
                   key={category}
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
-                    selectedCategory === category
-                      ? "bg-primary text-white shadow-md"
-                      : "bg-gray-100 text-dark-navy hover:bg-gray-200"
-                  }`}
+                  variant={selectedCategory === category ? "default" : "outline"}
+                  size="sm"
+                  className="rounded-sm"
                   data-aos="fade-up"
                   data-aos-delay={categories.indexOf(category) * 50}
                 >
                   {category}
-                </button>
+                </Button>
               ))}
             </div>
           </div>
@@ -151,11 +155,11 @@ export default function GalleryPage() {
                 </p>
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {filteredItems.map((item, index) => (
-                <div
+                <Card
                   key={item.id}
-                  className="group cursor-pointer overflow-hidden rounded-lg bg-white shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                  className="group cursor-pointer overflow-hidden border-gray-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
                   onClick={() => openLightbox(item)}
                   data-aos="fade-up"
                   data-aos-delay={index % 6 * 100}
@@ -176,7 +180,7 @@ export default function GalleryPage() {
                       {item.title}
                     </p>
                   </div>
-                </div>
+                </Card>
               ))}
             </div>
             )}
@@ -190,44 +194,46 @@ export default function GalleryPage() {
           <div className="relative w-full h-[90vh] flex items-center justify-center">
             {selectedImage && (
               <>
-                <button
+                <Button
                   onClick={closeLightbox}
-                  className="absolute top-4 right-4 z-50 p-2 bg-black/50 hover:bg-black/70 rounded-full text-white transition-colors"
+                  variant="ghost"
+                  size="icon"
+                  className="absolute top-4 right-4 z-50 bg-black/50 hover:bg-black/70 text-white rounded-sm"
                   aria-label="Close lightbox"
                 >
-                  <X className="w-6 h-6" />
-                </button>
+                  <X className="w-5 h-5" />
+                </Button>
                 
                 {/* Previous Button */}
                 {filteredItems.findIndex(item => item.id === selectedImage.id) > 0 && (
-                  <button
+                  <Button
                     onClick={() => {
                       const currentIndex = filteredItems.findIndex(item => item.id === selectedImage.id);
                       setSelectedImage(filteredItems[currentIndex - 1]);
                     }}
-                    className="absolute left-4 z-50 p-3 bg-black/50 hover:bg-black/70 rounded-full text-white transition-colors"
+                    variant="ghost"
+                    size="icon"
+                    className="absolute left-4 z-50 bg-black/50 hover:bg-black/70 text-white rounded-sm"
                     aria-label="Previous image"
                   >
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                    </svg>
-                  </button>
+                    <ChevronLeft className="w-5 h-5" />
+                  </Button>
                 )}
 
                 {/* Next Button */}
                 {filteredItems.findIndex(item => item.id === selectedImage.id) < filteredItems.length - 1 && (
-                  <button
+                  <Button
                     onClick={() => {
                       const currentIndex = filteredItems.findIndex(item => item.id === selectedImage.id);
                       setSelectedImage(filteredItems[currentIndex + 1]);
                     }}
-                    className="absolute right-4 z-50 p-3 bg-black/50 hover:bg-black/70 rounded-full text-white transition-colors"
+                    variant="ghost"
+                    size="icon"
+                    className="absolute right-4 z-50 bg-black/50 hover:bg-black/70 text-white rounded-sm"
                     aria-label="Next image"
                   >
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </button>
+                    <ChevronRight className="w-5 h-5" />
+                  </Button>
                 )}
 
                 <div className="relative w-full h-full flex flex-col items-center justify-center p-8">

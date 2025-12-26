@@ -55,7 +55,7 @@ const AvailableRoomsPreview = () => {
                   </div>
                 )}
                 <div className="absolute top-3 right-3">
-                  <span className="px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-800">
+                  <span className="px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/20">
                     Vacant
                   </span>
                 </div>
@@ -101,7 +101,7 @@ const AvailableRoomsPreview = () => {
           </div>
           <Link
             href="/rooms"
-            className="inline-flex items-center gap-2 bg-primary text-white font-semibold py-4 px-8 rounded-lg text-base transition-all duration-300 ease-in-out hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/30 transform hover:scale-105"
+            className="inline-flex items-center gap-2 bg-primary text-black font-semibold py-4 px-8 rounded-lg text-base transition-all duration-300 ease-in-out hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/30 transform hover:scale-105"
           >
             View All Available Rooms
             <ArrowRight className="w-5 h-5" />

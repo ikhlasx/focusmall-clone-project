@@ -99,7 +99,7 @@ const Footer = () => {
               href="https://maps.app.goo.gl/Snao92thQXErENgh8"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-[#1e3a5f] text-white py-3 px-6 rounded-md text-sm font-semibold hover:bg-opacity-90 transition-all duration-300"
+              className="inline-block bg-primary text-black py-3 px-6 rounded-lg text-sm font-semibold hover:bg-primary/90 transition-all duration-300 hover:shadow-lg"
             >
               Get Mall Map
             </a>

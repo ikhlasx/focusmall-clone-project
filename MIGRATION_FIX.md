@@ -85,3 +85,8 @@ Once migration is complete:
 2. Remove temporary policies (if you used Solution 2)
 3. Your admin panel will work with authenticated users only
 
+
+
+
+
+

@@ -4,7 +4,8 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -93,14 +94,17 @@ const Header = () => {
 
           <div className="flex items-center space-x-4">
             <Link 
-              href="/contact" 
-              className={`hidden lg:inline-block text-[15px] font-semibold px-[18px] py-[11px] rounded-[5px] whitespace-nowrap transition ${
-                pathname === "/contact" 
-                  ? "bg-primary/90 text-white" 
-                  : "bg-primary text-white hover:opacity-90"
-              }`}
+              href="/contact"
+              className="group relative inline-flex items-center gap-2 bg-[#87E9FF] text-black border border-black/10 text-base pl-6 pr-[52px] py-3 h-auto font-semibold rounded-lg transition-all duration-300 overflow-hidden hidden lg:inline-flex"
+              style={{ fontFamily: '"Red Hat Display", sans-serif', fontWeight: 500 }}
             >
-              Contact
+              <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
+                Contact
+              </span>
+              <div className="absolute right-[12px] top-[50%] h-8 w-8 -translate-y-1/2 rounded-full bg-dark-navy transition-all duration-300 group-hover:right-0 group-hover:top-0 group-hover:h-full group-hover:w-full group-hover:translate-y-0 group-hover:rounded-lg"></div>
+              <div className="absolute right-[12px] top-[50%] h-8 w-8 -translate-y-1/2 flex items-center justify-center z-10">
+                <ArrowRight className="w-4 h-4 text-white" strokeWidth={2.5} />
+              </div>
             </Link>
             <button
               className="lg:hidden z-[101]"
@@ -147,9 +151,9 @@ const Header = () => {
               })}
             </ul>
           </nav>
-          <Link href="/contact" className="mt-12 bg-primary text-white text-lg font-semibold px-8 py-3 rounded-md transition hover:opacity-90">
-            Contact
-          </Link>
+          <Button asChild className="mt-12" size="lg">
+            <Link href="/contact">Contact</Link>
+          </Button>
         </div>
       </div>
     </>

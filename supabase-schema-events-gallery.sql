@@ -94,3 +94,8 @@ CREATE POLICY "Admins can manage gallery" ON gallery
   FOR ALL
   USING (auth.role() = 'authenticated');
 
+
+
+
+
+

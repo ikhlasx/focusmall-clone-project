@@ -160,7 +160,7 @@ const RoomDetailModal = ({ room, isOpen, onClose }: RoomDetailModalProps) => {
           {/* Action Buttons */}
           {isVacant && (
             <div className="pt-6 border-t border-gray-200 flex flex-col sm:flex-row gap-4">
-              <button className="flex-1 bg-primary text-white py-3 px-6 rounded-md font-semibold hover:bg-primary/90 transition-colors">
+              <button className="flex-1 bg-primary text-black py-3 px-6 rounded-md font-semibold hover:bg-primary/90 transition-colors">
                 Contact for Booking
               </button>
               <button className="flex-1 bg-gray-100 text-dark-navy py-3 px-6 rounded-md font-semibold hover:bg-gray-200 transition-colors">

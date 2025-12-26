@@ -17,19 +17,19 @@ interface Category {
 const categories: Category[] = [
   {
     title: "🛍 Shopping",
-    description: "Fashion, jewellery, footwear, mobile shops, tailoring, opticals, and daily essentials.",
+    description: "Fashion, lifestyle, electronics, essentials & daily needs.",
     image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/fa64259f-66bd-430d-84b6-0aa1ec4f01ad-focusmall-in/assets/images/1-4.webp",
     link: "/rooms?type=Shop Room"
   },
   {
-    title: "🍽 Dining",
-    description: "Food court units, juice centres, restaurants, snack & tea concepts, rooftop dining.",
+    title: "🍔 Dining",
+    description: "Food courts, cafés, quick bites & family dining.",
     image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/fa64259f-66bd-430d-84b6-0aa1ec4f01ad-focusmall-in/assets/images/31-2.webp",
     link: "/rooms?type=Food Court"
   },
   {
     title: "🎮 Entertainment & Services",
-    description: "Gaming centre, gym, salon, studio, laundry, travel agency, business services.",
+    description: "Gaming, salons, studios, travel, wellness & more.",
     image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/fa64259f-66bd-430d-84b6-0aa1ec4f01ad-focusmall-in/assets/images/74-3.webp",
     link: "/rooms"
   },
@@ -55,7 +55,7 @@ const StoreCategoryCard = ({ category }: { category: Category }) => (
           href={category.link} 
           className="mt-4 text-base font-semibold text-white hover:text-primary transition-colors duration-300"
         >
-          Explore Spaces
+          Explore This Zone
         </a>
       </div>
     </div>
@@ -115,7 +115,7 @@ const StoreCategoriesCarousel = () => {
   };
 
   return (
-    <section className="bg-secondary py-20 lg:py-24" data-aos="fade-in" data-aos-duration="1500">
+    <section className="bg-secondary py-20 lg:py-24" id="explore" data-aos="fade-in" data-aos-duration="1500">
       <div className="container">
         <div className="text-center mb-12 lg:mb-16">
           <div className="overflow-hidden">

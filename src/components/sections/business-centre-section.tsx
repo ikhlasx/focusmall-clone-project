@@ -1,114 +1,72 @@
 "use client";
 
 import Link from "next/link";
-import { Building2, IndianRupee, ArrowRight, Users } from "lucide-react";
-import { businessCentreRooms } from "@/lib/room-data";
+import { ArrowRight } from "lucide-react";
+import { useId } from "react";
 
 const BusinessCentreSection = () => {
-  const businessTypes = [
+  const workspaceTypes = [
     {
-      type: "MINI ROOMS",
-      rate: 10000,
-      period: "month",
-      available: businessCentreRooms.find(r => r.type === "MINI ROOMS")?.quantity || 13,
-      description: "Perfect for startups and small teams"
+      title: "Mini Offices",
+      description: "Ideal for startups, consultants & solo founders. Private cabins in a professional business environment.",
     },
     {
-      type: "LARGE ROOMS",
-      rate: 13000,
-      period: "month",
-      available: businessCentreRooms.find(r => r.type === "LARGE ROOMS")?.quantity || 3,
-      description: "Ideal for growing businesses"
+      title: "Large Offices",
+      description: "Built for growing teams with spacious layouts and team collaboration-ready spaces.",
     },
     {
-      type: "DAILY WORK SPACE",
-      rate: 300,
-      period: "day",
-      available: businessCentreRooms.find(r => r.type === "DAILY WORK SPACE")?.quantity || 2,
-      description: "Flexible daily workspace solutions"
+      title: "Daily Workspace",
+      description: "Flexible desks for short visits. Pay-as-you-use professional setting for your convenience.",
     },
     {
-      type: "WEEKLY WORK SPACE",
-      rate: 3000,
-      period: "week",
-      available: businessCentreRooms.find(r => r.type === "WEEKLY WORK SPACE")?.quantity || 2,
-      description: "Short-term workspace options"
+      title: "Weekly Workspace",
+      description: "Short-term plans for projects & teams. Cost-effective and plug-and-work solutions.",
     },
     {
-      type: "WORK SPACE MONTHLY",
-      rate: 6000,
-      period: "month",
-      available: businessCentreRooms.find(r => r.type === "WORK SPACE MONTHLY")?.quantity || 12,
-      description: "Monthly workspace packages"
+      title: "Monthly Workspace",
+      description: "Dedicated desks for consistency. Stable setup with a business-friendly environment.",
     },
     {
-      type: "S.P WORK SPACE",
-      rate: 8000,
-      period: "month",
-      available: businessCentreRooms.find(r => r.type === "S.P WORK SPACE")?.quantity || 8,
-      description: "Special private workspace solutions"
+      title: "Private Workspaces (S.P)",
+      description: "Secure & exclusive cabins with privacy-focused design and premium feel.",
     },
   ];
 
   return (
-    <section className="py-20 bg-light-background" id="business-centre">
+    <section className="py-20 lg:py-40 bg-light-background" id="business-centre">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12" data-aos="fade-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-dark-navy mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-dark-navy mb-4">
             Emall Business Centre
           </h2>
-          <p className="text-lg text-medium-gray max-w-2xl mx-auto">
-            Flexible office and workspace solutions for professionals, startups, and service providers.
+          <p className="text-lg text-medium-gray max-w-3xl mx-auto">
+            A professional workspace ecosystem inside a high-footfall commercial destination — designed for startups, service providers, and growing teams.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-          {businessTypes.map((item, index) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-10 md:gap-2 max-w-7xl mx-auto mb-10">
+          {workspaceTypes.map((workspace) => (
             <div
-              key={index}
-              className="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200"
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
+              key={workspace.title}
+              className="relative bg-gradient-to-b dark:from-neutral-900 from-neutral-100 dark:to-neutral-950 to-white p-6 rounded-3xl overflow-hidden"
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="bg-primary/10 p-3 rounded-lg">
-                  <Building2 className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-dark-navy">{item.type}</h3>
-                  <p className="text-xs text-medium-gray">{item.description}</p>
-                </div>
-              </div>
-
-              <div className="pt-4 border-t border-gray-200">
-                <div className="flex items-center justify-between mb-4">
-                  <div>
-                    <p className="text-xs text-medium-gray mb-1">Rate</p>
-                    <p className="text-2xl font-bold text-primary flex items-center">
-                      <IndianRupee className="w-5 h-5" />
-                      {item.rate.toLocaleString("en-IN")}
-                      <span className="text-sm font-normal text-medium-gray ml-1">/{item.period}</span>
-                    </p>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-xs text-medium-gray mb-1">Available</p>
-                    <div className="flex items-center gap-1">
-                      <Users className="w-4 h-4 text-green-600" />
-                      <p className="text-lg font-bold text-green-600">{item.available}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <Grid size={20} />
+              <p className="text-base font-bold text-neutral-800 dark:text-white relative z-20">
+                {workspace.title}
+              </p>
+              <p className="text-neutral-600 dark:text-neutral-400 mt-4 text-base font-normal relative z-20">
+                {workspace.description}
+              </p>
             </div>
           ))}
         </div>
 
-        <div className="text-center">
+        <div className="text-center" data-aos="fade-up">
           <Link
             href="/rooms?type=Business Centre"
-            className="inline-flex items-center gap-2 bg-primary text-white font-semibold py-4 px-8 rounded-lg text-base transition-all duration-300 ease-in-out hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/30 transform hover:scale-105"
+            className="inline-flex items-center gap-2 bg-primary text-black font-semibold py-4 px-8 rounded-lg text-base transition-all duration-300 ease-in-out hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/30 transform hover:scale-105"
           >
-            Enquire for Business Space
+            Explore Business Centre
             <ArrowRight className="w-5 h-5" />
           </Link>
         </div>
@@ -117,5 +75,75 @@ const BusinessCentreSection = () => {
   );
 };
 
-export default BusinessCentreSection;
+export const Grid = ({
+  pattern,
+  size,
+}: {
+  pattern?: number[][];
+  size?: number;
+}) => {
+  const p = pattern ?? [
+    [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
+    [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
+    [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
+    [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
+    [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
+  ];
+  return (
+    <div className="pointer-events-none absolute left-1/2 top-0  -ml-20 -mt-2 h-full w-full [mask-image:linear-gradient(white,transparent)]">
+      <div className="absolute inset-0 bg-gradient-to-r  [mask-image:radial-gradient(farthest-side_at_top,white,transparent)] dark:from-zinc-900/30 from-zinc-100/30 to-zinc-300/30 dark:to-zinc-900/30 opacity-100">
+        <GridPattern
+          width={size ?? 20}
+          height={size ?? 20}
+          x="-12"
+          y="4"
+          squares={p}
+          className="absolute inset-0 h-full w-full  mix-blend-overlay dark:fill-white/10 dark:stroke-white/10 stroke-black/10 fill-black/10"
+        />
+      </div>
+    </div>
+  );
+};
 
+export function GridPattern({ width, height, x, y, squares, ...props }: any) {
+  const patternId = useId();
+
+  return (
+    <svg aria-hidden="true" {...props}>
+      <defs>
+        <pattern
+          id={patternId}
+          width={width}
+          height={height}
+          patternUnits="userSpaceOnUse"
+          x={x}
+          y={y}
+        >
+          <path d={`M.5 ${height}V.5H${width}`} fill="none" />
+        </pattern>
+      </defs>
+      <rect
+        width="100%"
+        height="100%"
+        strokeWidth={0}
+        fill={`url(#${patternId})`}
+      />
+      {squares && (
+        <svg x={x} y={y} className="overflow-visible">
+          {squares.map(([x, y]: any) => (
+            <rect
+              strokeWidth="0"
+              key={`${x}-${y}`}
+              width={width + 1}
+              height={height + 1}
+              x={x * width}
+              y={y * height}
+            />
+          ))}
+        </svg>
+      )}
+    </svg>
+  );
+};
+
+export default BusinessCentreSection;
