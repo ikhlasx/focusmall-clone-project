@@ -2,11 +2,15 @@
 
 import Link from "next/link";
 import { ArrowRight, Briefcase } from "lucide-react";
+import { Tiles } from "@/components/tiles";
 
 const BusinessOpportunitiesSection = () => {
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-b from-white to-primary/5" id="opportunities">
-      <div className="container mx-auto px-6 lg:px-8">
+    <section className="relative py-20 lg:py-28 bg-gradient-to-b from-white to-primary/5 overflow-hidden" id="opportunities">
+      <div className="absolute inset-0 z-0 opacity-30">
+        <Tiles rows={15} cols={20} tileSize="sm" className="w-full h-full" />
+      </div>
+      <div className="container mx-auto px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl lg:text-[48px] font-bold text-dark-navy mb-6 leading-tight">
             Ready to grow your brand at Emall?
