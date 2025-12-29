@@ -75,7 +75,7 @@ const Header = () => {
               className="text-white hover:text-primary transition-colors flex items-center gap-1.5"
             >
               <Phone size={16} />
-              <span className="hidden sm:inline">+91 79942 35131</span>
+              <span className="hidden sm:inline">+91 7994235131</span>
             </a>
             
             {/* Separator */}

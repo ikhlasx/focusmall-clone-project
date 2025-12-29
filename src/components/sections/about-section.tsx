@@ -198,11 +198,11 @@ const AboutSection = () => {
               <div>
                 <h4 className="text-lg font-semibold text-dark-navy mb-2" style={{ fontFamily: '"Red Hat Display", sans-serif' }}>Phone</h4>
                 <a
-                  href="tel:+917736446513"
+                  href="tel:+917994235131"
                   className="text-medium-gray hover:text-[#87E9FF] transition-colors"
                   style={{ fontFamily: '"Red Hat Display", sans-serif' }}
                 >
-                  +91 7736446513
+                  +91 7994235131
                 </a>
               </div>
             </div>

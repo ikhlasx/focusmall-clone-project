@@ -95,8 +95,8 @@ export default function ContactPage() {
                           Phone
                         </CardTitle>
                         <CardContent className="p-0">
-                          <a href="tel:+917736446513" className="text-lg font-medium text-medium-gray hover:text-[#87E9FF] transition-colors">
-                            +91 7736446513
+                          <a href="tel:+917994235131" className="text-lg font-medium text-medium-gray hover:text-[#87E9FF] transition-colors">
+                            +91 7994235131
                           </a>
                         </CardContent>
                       </div>

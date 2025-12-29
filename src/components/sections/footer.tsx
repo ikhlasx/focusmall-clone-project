@@ -28,7 +28,7 @@ const Footer = () => {
             </Link>
             <p className="text-xs text-muted-foreground tracking-wider uppercase">World Class Shopping & Business Destination</p>
             <div className="flex space-x-4 pt-2">
-              <a href="https://wa.me/+917736446513" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="text-foreground hover:text-primary transition-colors">
+              <a href="https://wa.me/917994235131" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="text-foreground hover:text-primary transition-colors">
                 <MessageCircle size={22} />
               </a>
               <a href="#" aria-label="Instagram" className="text-foreground hover:text-primary transition-colors">
@@ -77,8 +77,8 @@ const Footer = () => {
                 Kerala, India.
               </p>
               <p>
-                <a href="tel:+917736446513" className="hover:text-primary transition-colors">
-                 +91 7736446513
+                <a href="tel:+917994235131" className="hover:text-primary transition-colors">
+                 +91 7994235131
                 </a>
               </p>
               <p>
