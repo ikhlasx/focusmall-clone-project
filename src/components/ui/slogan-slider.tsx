@@ -61,7 +61,7 @@ export function SloganSlider({
 
   return (
     <div 
-      className={`relative mx-auto max-w-full bg-white py-4 md:py-6 ${className || ''}`}
+      className={`relative mx-auto max-w-full bg-white py-4 md:py-6 overflow-x-hidden ${className || ''}`}
       {...props}
     >
       <div className="-translate-x-1/2 -top-px pointer-events-none absolute left-1/2 w-screen border-t border-black/10" />

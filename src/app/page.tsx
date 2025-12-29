@@ -26,9 +26,9 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col overflow-x-hidden">
       <Header />
-      <main className="flex-1">
+      <main className="flex-1 w-full overflow-x-hidden">
         <HeroSection />
         <SloganBanner />
         <WhyEmallSection />

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight, Instagram, Facebook, MessageCircle, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
@@ -53,7 +53,76 @@ const Header = () => {
 
   return (
     <>
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerStyle}`}>
+      {/* Top Contact Bar */}
+      <div className="fixed top-0 left-0 right-0 z-[60] bg-dark-navy/95 backdrop-blur-sm border-b border-primary/20 h-[40px]">
+        <div className="container mx-auto px-6 lg:px-8 h-full">
+          <div className="flex items-center justify-end gap-4 h-full text-sm">
+            {/* Email */}
+            <a 
+              href="mailto:info@emalmanjeri.com" 
+              className="text-white hover:text-primary transition-colors flex items-center gap-1.5"
+            >
+              <Mail size={16} />
+              <span className="hidden sm:inline">info@emalmanjeri.com</span>
+            </a>
+            
+            {/* Separator */}
+            <div className="h-4 w-px bg-primary/30"></div>
+            
+            {/* Phone */}
+            <a 
+              href="tel:+917994235131" 
+              className="text-white hover:text-primary transition-colors flex items-center gap-1.5"
+            >
+              <Phone size={16} />
+              <span className="hidden sm:inline">+91 79942 35131</span>
+            </a>
+            
+            {/* Separator */}
+            <div className="h-4 w-px bg-primary/30"></div>
+            
+            {/* Social Media Icons */}
+            <div className="flex items-center gap-3">
+              <a 
+                href="https://www.instagram.com/e_mall.manjeri?igsh=dmt1aXc2djBtdWt0" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white hover:text-primary transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram size={18} />
+              </a>
+              <a 
+                href="https://www.facebook.com/share/1B3qHvXDF9/?mibextid=wwXIfr" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white hover:text-primary transition-colors"
+                aria-label="Facebook"
+              >
+                <Facebook size={18} />
+              </a>
+              <a 
+                href="https://wa.me/917994235131" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white hover:text-primary transition-colors"
+                aria-label="WhatsApp"
+              >
+                <MessageCircle size={18} />
+              </a>
+              <a 
+                href="mailto:info@emalmanjeri.com" 
+                className="text-white hover:text-primary transition-colors"
+                aria-label="Email"
+              >
+                <Mail size={18} />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <header className={`fixed top-[40px] left-0 right-0 z-50 transition-all duration-300 ${headerStyle}`}>
         <div className="container mx-auto flex items-center justify-between h-[88px] px-6 lg:px-8">
           <Link href="/" aria-label="E-Mall Home">
             <Image

@@ -23,7 +23,7 @@ const HeroSection = () => {
 
   return (
     <section className="relative w-full bg-white overflow-hidden py-12 lg:py-16">
-      <div className="container mx-auto px-6 lg:px-8 pt-[67px] pb-[67px]">
+      <div className="container mx-auto px-6 lg:px-8 pt-[128px] pb-[67px]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-start">
           {/* Left Side: Image Carousel */}
           <div className="relative w-full h-[400px] sm:h-[500px] lg:h-[500px] rounded-2xl overflow-hidden shadow-lg order-2 lg:order-1" data-aos="fade-right" data-aos-duration="1000">

@@ -5,7 +5,7 @@ import { SloganSlider } from "@/components/ui/slogan-slider";
 // Example profile picture - replace this with your actual profile image
 const defaultProfilePictures = [
   {
-    src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face",
+    src: "/icon.png",
     alt: "Profile",
     width: 48,
     height: 48,
@@ -27,7 +27,7 @@ export function SloganBanner({
   profilePictures = defaultProfilePictures 
 }: SloganBannerProps) {
   return (
-    <section className="w-full bg-white">
+    <section className="w-full bg-white overflow-x-hidden">
       <SloganSlider 
         slogan={slogan}
         profilePictures={profilePictures}

@@ -88,7 +88,7 @@ const FloorsBlocksStructure = () => {
       description: "Wellness, fashion & women-focused brands",
       icon: Dumbbell,
       link: "/rooms?block=B Block&floor=2nd Floor",
-      image: "/BLOCK B/SECOND FLOOR/VIEWS_1 - Photo.jpg",
+      image: "/gym.jpg",
       flipKey: "b-block-2nd"
     },
     {
